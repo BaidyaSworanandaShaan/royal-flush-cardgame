@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+}
+h1,
+h2,
+h3 {
+  font-family: "Fredericka the Great", serif;
+  letter-spacing: 1.7px;
+  color: #ffd700;
+}
+
+.game-initial {
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff8e7;
+}
+
+.game-main {
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff8e7;
+  flex-direction: row;
+  gap: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+.sub-title {
+  opacity: 0.8;
+}
+.btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 37px;
+  border: none;
+  background-color: #fff8e7;
+  color: #001242;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffd700;
+  color: #001242;
+  box-shadow: 0 0 10px #ffd700;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #888; /* or a muted gold */
+}
+
+/* Splash Screen */
+
+.splash-screen {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.splash-icon img {
+  width: 100%;
+  max-width: 400px;
+}
+.splash-title {
+  letter-spacing: 1.7px;
+  font-size: 60px;
+  margin-bottom: 5px;
+}
+.splash-sub {
+  font-family: "Fredericka the Great", serif;
+  font-size: 22px;
+}
+.splash-icon {
+  margin: 20px 0;
+}
+.splash-message {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+}
+.auth-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+.auth-toggle-buttons button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-active {
+  font-weight: bold;
+  color: #001242 !important;
+  font-weight: bold;
+  background-color: #ffd700 !important;
+
+  padding: 5px 8px;
+  border-radius: 31px;
+}
+/* Player Username */
+
+.playerDetail-screen {
+  display: none;
+}
+.username-title {
+  display: block;
+  font-size: 30px;
+}
+.username-sub {
+  margin: 10px 0;
+}
+.textfield {
+  color: #fff8e7;
+  border: none;
+  border-bottom: 4px solid #fff8e7;
+  height: 40px;
+  margin-left: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+  background: transparent;
+  display: block;
+  outline: none;
+}
+#btn-username {
+  margin-top: 20px;
+}
+
+/* Lobby Screen */
+.lobby-selection-screen {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lobby-welcome-message {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.lobby-sub {
+  text-align: center;
+}
+.lobby-choose-room {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+.room {
+  background-color: #fff8e7;
+  padding: 50px;
+  border-radius: 8px;
+  color: #001242;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.room span {
+  display: block;
+}
+
+.room:hover {
+  background-color: #ffd700;
+  color: #001242;
+  transform: scale(1.05);
+}
+
+/* joinRoom screen */
+
+.joinRoom-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* main game screen */
+
+.main-game-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-game-screen p {
+  font-size: 20px;
+}
+
+.player {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff8e7;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.player img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff8e7;
+  padding: 5px;
+}
+
+.card {
+  padding: 5px 10px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  font-size: 12px;
+}
+
+.game-table {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-image: url("../img/round-poker-table.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.active-player {
+  background-color: #6f4f38;
+}
+.game-main {
+}
+
+.btn-game-options {
+  margin: 5px 0;
+}
+
+.bet-control {
+  text-align: center;
+}
+input#bet-amount {
+  padding: 15px;
+  border-radius: 38px;
+  border: none;
+  width: 100px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.btn-bet-control {
+  border-radius: 7px;
+  border: none;
+  padding: 10px;
+}
+.round-pot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  color: #fff8e7;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.round-pot img {
+  width: 40px;
+  height: 40px;
+}
+#round-log {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 50px);
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 12px;
+  color: #fff8e7;
+  user-select: none;
+}
+
+#round-log p {
+  margin: 0;
+}
+
+#round-log span {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+@media only screen and (orientation: landscape) and (max-height: 600px) {
+  .splash-icon img {
+    display: none;
+  }
+  .splash-message {
+    margin: 10px 0;
+  }
+  .splash-title {
+    font-size: 50px;
+  }
+  .splash-message {
+    font-size: 16px;
+  }
+  .room {
+    padding: 30px;
+  }
+  .game-table {
+    height: 300px;
+    width: 300px;
+  }
+  .game-main {
+    justify-content: space-evenly;
+  }
+  .btn {
+    padding: 10px;
+  }
+  .round-pot {
+    font-size: 12px;
+  }
+  #round-log {
+    font-size: 10px;
+  }
+  .round-pot img {
+    width: 20px;
+    height: 20px;
+  }
+  .player {
+    font-size: 12px;
+  }
+  .player img {
+    width: 20px;
+    height: 20px;
+  }
+}
+@keyframes moveCoin {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+.coin-animate {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/coin.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1000;
+  transition: transform 0.7s ease-out;
+  transform: translate(0, 0);
+}
